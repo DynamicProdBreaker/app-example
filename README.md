@@ -34,6 +34,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 For more help with the project, contact [DynamicProdBreaker](https://github.com/DynamicProdBreaker) for guidance on committing, styling,
 and contributing to the repository.
+Further documentation can be found in [the contribution guidelines](https://github.com/DynamicProdBreaker/app-example/blob/main/docs/CONTRIBUTING).
 
 For more advanced users, run `ng help` for help with Angular itself, or go check out the documentation
 at the [Angular CLI Overview and Command Reference](https://angular.io/cli).
