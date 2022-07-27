@@ -1,10 +1,8 @@
-import { formatDate } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { timer } from 'rxjs';
 import { AppComponent } from './app.component';
-import { LookupResult } from './lookup.defs';
 import { LookupService } from './lookup.service';
-import { debug, formatDateString, rawToExpected, shiftDaysRawAndConvert } from './util';
+import { formatDateString, shiftDaysRawAndConvert } from './util';
 
 @Injectable({
   providedIn: 'root' // Singleton preferred for global utilities
@@ -43,7 +41,7 @@ export class CoreService {
             this.data[0].data.length = 0;
             this.data[0].label = data.metadata.reading_type;
             this.interf.control.plugins.title.text = `Reading type: ${data.metadata.reading_unit}`;
-            this.interf.toDisplay = `Reference date: ${formatDate(cur, "d MMMM y", "en-US", "UTC")}`;
+            this.interf.toDisplay = `Reference date: ${formatDateString(cur, "d MMMM y")}`;
             this.interf.toDisplay += "\n";
             this.interf.toDisplay += `Displayed time for all dates: ${this.interf.time}`;
             this.interf.toDisplay += "\n";
@@ -69,7 +67,7 @@ export class CoreService {
             this.data[0].data.length = 0;
             this.data[0].label = data.metadata.reading_type;
             this.interf.control.plugins.title.text = `Reading type: ${data.metadata.reading_unit}`;
-            this.interf.toDisplay = `Reference date: ${formatDate(cur, "d MMMM y", "en-US", "UTC")}`;
+            this.interf.toDisplay = `Reference date: ${formatDateString(cur, "d MMMM y")}`;
             this.interf.toDisplay += "\n";
             this.interf.toDisplay += `Displayed time for all dates: ${this.interf.time}`;
             this.interf.toDisplay += "\n";
