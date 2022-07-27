@@ -4,7 +4,7 @@ import { timer } from 'rxjs';
 import { AppComponent } from './app.component';
 import { LookupResult } from './lookup.defs';
 import { LookupService } from './lookup.service';
-import { debug, rawToExpected, shiftDaysRawAndConvert } from './util';
+import { debug, formatDateString, rawToExpected, shiftDaysRawAndConvert } from './util';
 
 @Injectable({
   providedIn: 'root' // Singleton preferred for global utilities
@@ -55,7 +55,7 @@ export class CoreService {
           // Hardcode to Ang Mo Kio station for now
           this.data[0].data.push(data.items[0].readings[1].value);
 
-          this.dates.push(formatDate(cur, "MMMM d, y", "en-US", "UTC"));
+          this.dates.push(formatDateString(cur, "MMMM d, y"));
           this.interf.updateHandle = [{dates: this.dates, data: this.data}];
         }
       }
@@ -81,7 +81,7 @@ export class CoreService {
           // Hardcode to Ang Mo Kio station for now
           this.data[0].data.push(data.items[0].readings[1].value);
 
-          this.dates.push(formatDate(cur, "MMMM d, y", "en-US", "UTC"));
+          this.dates.push(formatDateString(cur, "MMMM d, y"));
           this.interf.updateHandle = [{dates: this.dates, data: this.data}];
         }
       }

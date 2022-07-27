@@ -1,4 +1,9 @@
+import { formatDate } from "@angular/common";
 import { debugMode } from "./global.defs";
+
+export function formatDateString(d: Date, format: string) {
+    return formatDate(d, format, "en-US", "UTC");
+}
 
 export function dateFrom(year: number, month: number, date: number,
   hours: number, minutes: number, seconds: number) {
